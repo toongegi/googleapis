@@ -7,16 +7,18 @@
 #
 
 # Choose the output directory
-OUTPUT ?= ./gens
+OUTPUT ?= thai
+
+
 
 # Choose the target language.
-LANGUAGE ?= cpp
+LANGUAGE ?= thai
 
 # Choose grpc plugin
-GRPCPLUGIN ?= /usr/local/bin/grpc_$(LANGUAGE)_plugin
+GRPCPLUGIN = / usr / local / bin / grpc_ $ ( thai) _plugin
 
-# Choose the proto include directory.
-PROTOINCLUDE ?= /usr/local/include
+# เลือกไดเรกทอรีรวมถึงโปรโ
+PROTOINCLUDE = / usr / locainclude
 
 # Choose protoc binary
 PROTOC ?= protoc
@@ -26,13 +28,13 @@ PROTOC ?= protoc
 # NOTE: if "protoc" command is not in the PATH, you need to modify this file.
 #
 
-ifeq ($(LANGUAGE),go)
+ifeq ($thai),go)
 $(error Go source files are not generated from this repository. See: https://github.com/google/go-genproto)
 endif
 
 FLAGS+= --proto_path=.:$(PROTOINCLUDE)
-FLAGS+= --$(LANGUAGE)_out=$(OUTPUT) --grpc_out=$(OUTPUT)
-FLAGS+=	--plugin=protoc-gen-grpc=$(GRPCPLUGIN)
+FLAGS + = - $ ( thai )_out = $ ( OUTPUT ) --grpc_out = $ ( OUTPUT)
+FLAGS + = 	--plugin = protoc-gen-grpc = $ ( GRPCPLUGIN )
 
 SUFFIX:= pb.cc
 
